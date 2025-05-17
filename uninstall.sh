@@ -25,7 +25,7 @@ rm -f "$DATA_DIR/version"
 
 if [[ $REMOVE_DATA == true ]]; then
   echo "Removing data directory..."
-  rm -f "$DATA_DIR"
+  rm -rf "$DATA_DIR"
 fi
 
 echo "Reloading systemd daemon..."
