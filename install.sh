@@ -5,7 +5,7 @@ GITHUB_REPO=botleasegpu/agent
 SERVICE_NAME=lgpuagent
 DATA_DIR=/etc/$SERVICE_NAME
 
-download_and_install_latest() {
+install_binary_latest() {
   local os=$(uname | tr '[:upper:]' '[:lower:]')
   local arch=$(uname -m)
   local latest_tag=$(curl -fsSL "https://api.github.com/repos/$GITHUB_REPO/releases/latest" | grep -Po '"tag_name":\s*"\K.*?(?=")')
@@ -111,7 +111,7 @@ fi
 
 mkdir -p /usr/local/bin "$DATA_DIR"
 
-download_and_install_latest
+install_binary_latest
 install_service_unit
 install_update_script
 install_timer_unit
