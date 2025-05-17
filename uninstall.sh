@@ -11,10 +11,10 @@ if [[ "$(id -u)" -ne 0 ]]; then
 fi
 
 echo "Stopping and disabling systemd units..."
-systemctl stop "$SERVICE_NAME.service" 2>/dev/null || true
-systemctl disable "$SERVICE_NAME.service" 2>/dev/null || true
 systemctl stop "$SERVICE_NAME-autoupdater.timer" 2>/dev/null || true
 systemctl disable "$SERVICE_NAME-autoupdater.timer" 2>/dev/null || true
+systemctl stop "$SERVICE_NAME.service" 2>/dev/null || true
+systemctl disable "$SERVICE_NAME.service" 2>/dev/null || true
 
 rm -f "/usr/local/bin/$SERVICE_NAME"
 rm -f "/usr/local/bin/$SERVICE_NAME-update"
