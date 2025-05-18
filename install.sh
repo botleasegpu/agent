@@ -70,8 +70,6 @@ if [[ "\$LATEST" != "\$CURRENT" ]]; then
   mv "/tmp/\$asset" "/usr/local/bin/$SERVICE_NAME"
   echo "\$LATEST" > "$DATA_DIR/version"
   systemctl restart "$SERVICE_NAME.service"
-else
-  echo "Already at latest (\$CURRENT)"
 fi
 EOF
 
