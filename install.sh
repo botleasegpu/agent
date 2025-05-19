@@ -86,7 +86,7 @@ Type=oneshot
 ExecStart=/usr/local/bin/$SERVICE_NAME-update
 EOF
 
-  cat > "/usr/local/bin/$SERVICE_NAME-autoupdater.timer" <<EOF
+  cat > "/etc/systemd/system/$SERVICE_NAME-autoupdater.timer" <<EOF
 [Unit]
 Description=Run $SERVICE_NAME-autoupdater.service hourly
 
